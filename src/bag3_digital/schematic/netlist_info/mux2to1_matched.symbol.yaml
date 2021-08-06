@@ -337,27 +337,23 @@ props:
     - X
   interfaceLastChanged:
     - 4
-    - time_val: 1627853673
+    - time_val: 1623388744
   partName:
     - 3
     - mux2to1_matched
   pin#:
     - 0
-    - 12
-  portOrder:
-    - 5
-    - name: ILList
-      bin_val: ("out" "VDD" "VSS" "in<1:0>" "sel" "selb")
+    - 6
   vendorName:
     - 3
     - ""
 app_defs:
   _dbLastSavedCounter:
     - 0
-    - 300
+    - 63
   _dbvCvTimeStamp:
     - 0
-    - 300
+    - 63
   cdbRevision:
     - 0
     - 227612
