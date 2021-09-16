@@ -14,9 +14,9 @@ terminals:
         purpose: 4294967295
         net: ""
         bbox:
-          - 106
+          - 116
           - 156
-          - 114
+          - 124
           - 164
     stype: 1
     ttype: 2
@@ -27,9 +27,9 @@ terminals:
         purpose: 4294967295
         net: ""
         bbox:
-          - 106
+          - 116
           - -4
-          - 114
+          - 124
           - 4
     stype: 2
     ttype: 2
@@ -86,22 +86,6 @@ terminals:
     stype: 0
     ttype: 0
 shapes:
-  -
-    - 7
-    - layer: 229
-      purpose: 237
-      net: ""
-      origin:
-        - 110
-        - 154
-      alignment: 1
-      orient: R270
-      font: 5
-      height: 10
-      overbar: false
-      visible: true
-      drafting: true
-      text: VDD
   -
     - 7
     - layer: 229
@@ -180,10 +164,26 @@ shapes:
       purpose: 237
       net: ""
       origin:
-        - 110
-        - 6
+        - 134
+        - 150
       alignment: 1
-      orient: R90
+      orient: R180
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VDD
+  -
+    - 7
+    - layer: 229
+      purpose: 237
+      net: ""
+      origin:
+        - 106
+        - 10
+      alignment: 7
+      orient: R180
       font: 5
       height: 10
       overbar: false
@@ -317,18 +317,6 @@ shapes:
         -
           - 100
           - 20
-  -
-    - 5
-    - layer: 231
-      purpose: 4294967295
-      net: ""
-      points:
-        -
-          - 0
-          - 80
-        -
-          - 40
-          - 80
 instances:
   {}
 props:

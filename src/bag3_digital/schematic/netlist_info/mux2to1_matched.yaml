@@ -507,22 +507,10 @@ shapes:
           - -130
           - -30
   -
-    - 5
-    - layer: 228
-      purpose: 4294967295
-      net: VDD
-      points:
-        -
-          - -590
-          - 40
-        -
-          - -590
-          - 80
-  -
     - 7
     - layer: 228
       purpose: 237
-      net: VDD
+      net: outb_s<1:0>
       origin:
         - -135
         - -35
@@ -533,7 +521,7 @@ shapes:
       overbar: false
       visible: true
       drafting: true
-      text: VDD
+      text: outb_s<1:0>
   -
     - 5
     - layer: 228
@@ -566,11 +554,11 @@ shapes:
     - 5
     - layer: 228
       purpose: 4294967295
-      net: sel
+      net: outb
       points:
         -
-          - -730
-          - -40
+          - 240
+          - -20
         -
           - 250
           - -10
@@ -635,40 +623,19 @@ instances:
     params:
       {}
     is_primitive: false
-  XSEL:
-    lib_name: bag3_digital
-    cell_name: inv
-    view_name: symbol
-    xform:
-      - -690
-      - -120
-      - R0
-    bbox:
-      - -694
-      - -124
-      - -486
-      - 44
-    connections:
-      VDD: VDD
-      VSS: VSS
-      in: sel
-      out: selb
-    params:
-      {}
-    is_primitive: false
   XSUM:
     lib_name: xbase
     cell_name: current_summer
     view_name: symbol
     xform:
       - -40
-      - -100
+      - -80
       - R0
     bbox:
       - -44
-      - -100
+      - -80
       - 318
-      - 36
+      - 56
     connections:
       in<1:0>: outb_s<1:0>
       out: outb
@@ -681,7 +648,7 @@ props:
     - 931
   instance#:
     - 0
-    - 3
+    - 2
   lastSchematicExtraction:
     - 4
     - time_val: 1623388708
