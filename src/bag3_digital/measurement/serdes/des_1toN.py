@@ -43,6 +43,27 @@ class Des1toNMeas(MeasurementManager):
         des_ratio: int = self.specs['des_ratio']
         tbm_specs: Mapping[str, Any] = self.specs['tbm_specs']
 
+        save_outputs = ['din', 'clk', 'clk_div', f'dout<{des_ratio - 1}:0>', f'd<{des_ratio - 1}:0>', 'clkb',
+                        'clk_divb', 'clk_div_buf', 'clk_divb_buf', 'clk_buf', 'clkb_buf', 'VDC0']
+
+        # harnesses
+        if harnesses:
+            clk_i = 'clk_i'
+            clk_div_i = 'clk_div_i'
+            din_i = 'din_i'
+            # make conns_dict for 3 buffers
+            harnesses_list = [
+                dict(harness_idx=0, conns=[('VDD', 'VDD'), ('VSS', 'VSS'), ('in', clk_i), ('out', 'clk')]),
+                dict(harness_idx=0, conns=[('VDD', 'VDD'), ('VSS', 'VSS'), ('in', clk_div_i), ('out', 'clk_div')]),
+                dict(harness_idx=0, conns=[('VDD', 'VDD'), ('VSS', 'VSS'), ('in', din_i), ('out', 'din')]),
+            ]
+            save_outputs.extend([clk_i, clk_div_i, din_i])
+        else:
+            clk_i = 'clk'
+            clk_div_i = 'clk_div'
+            din_i = 'din'
+            harnesses_list = []
+
         # create clk and clk_div
         pulse_list = [dict(pin='clk', tper='t_per', tpw='t_per/2', trf='t_rf', td='t_d'),
                       dict(pin='clk_div', tper=f't_per*{des_ratio}', tpw=f't_per*{des_ratio}/2', trf='t_rf',
